@@ -1,115 +1,142 @@
 import type { PortfolioData } from '../types/portfolio'
 
 /**
- * EDITE ESTE ARQUIVO para trocar as informações do portfólio.
- * O layout lê os dados daqui para evitar textos espalhados pelos componentes.
+ * Fonte inicial: currículo de Mauro Diogo Fioravante Ferreira.
+ * Edite este arquivo para manter o portfólio atualizado.
  */
 export const portfolio: PortfolioData = {
   personal: {
-    fullName: 'Mauro Ferreira',
+    fullName: 'Mauro Diogo Fioravante Ferreira',
     shortName: 'Mauro Ferreira',
-    title: 'Desenvolvedor de Software',
-    location: 'Paraná, Brasil',
-    email: 'seuemail@exemplo.com',
-    phone: '+55 (00) 00000-0000',
+    title: 'Programador Front-end',
+    location: 'Cornélio Procópio, Paraná, Brasil',
+    email: 'maurodiogo56@gmail.com',
+    phone: '',
     github: 'https://github.com/maurodferreira',
-    linkedin: 'https://www.linkedin.com/in/seu-usuario',
+    linkedin: '',
     website: '',
     initials: 'MF',
   },
+
   summary:
-    'Desenvolvedor focado em construir experiências web modernas, responsivas e bem estruturadas. Gosto de transformar problemas reais em interfaces claras, produtos consistentes e código fácil de manter.',
+    'Programador com experiência profissional em desenvolvimento front-end, com foco na construção de interfaces eficientes, intuitivas e voltadas à experiência do usuário. Busco contribuir na criação de soluções inovadoras, apoiar equipes no desenvolvimento de novos projetos e enfrentar desafios tecnológicos de forma criativa e estratégica.',
+
   skills: [
     {
-      name: 'Frontend',
-      description: 'Tecnologias principais',
+      name: 'Front-end',
+      description: 'Principal área de atuação',
       skills: [
+        { name: 'JavaScript', level: 'primary' },
         { name: 'React', level: 'primary' },
-        { name: 'TypeScript', level: 'primary' },
-        { name: 'Next.js', level: 'primary' },
-        { name: 'Vite', level: 'secondary' },
-        { name: 'HTML', level: 'secondary' },
-        { name: 'CSS', level: 'secondary' },
+        { name: 'HTML e CSS', level: 'primary' },
+        { name: 'TypeScript', level: 'secondary' },
       ],
     },
     {
-      name: 'Backend',
-      description: 'APIs e serviços',
+      name: 'Programação',
+      description: 'Linguagens e tecnologias',
       skills: [
-        { name: 'Node.js', level: 'primary' },
-        { name: 'NestJS', level: 'primary' },
-        { name: 'TypeORM', level: 'secondary' },
-        { name: 'REST APIs', level: 'secondary' },
+        { name: 'Node.js', level: 'secondary' },
+        { name: 'C', level: 'secondary' },
+        { name: 'Python', level: 'secondary' },
+        { name: 'C#', level: 'secondary' },
       ],
     },
     {
-      name: 'Ferramentas',
-      description: 'Fluxo de desenvolvimento',
+      name: 'Competências',
+      description: 'Trabalho e colaboração',
       skills: [
-        { name: 'Git', level: 'primary' },
-        { name: 'GitHub', level: 'primary' },
-        { name: 'VS Code', level: 'secondary' },
-        { name: 'SQL', level: 'secondary' },
+        { name: 'Comunicação eficaz', level: 'secondary' },
+        { name: 'Trabalho em equipe', level: 'secondary' },
+        { name: 'Liderança', level: 'secondary' },
+        { name: 'Organização', level: 'secondary' },
+        { name: 'Pensamento analítico', level: 'secondary' },
+      ],
+    },
+    {
+      name: 'Idiomas',
+      description: 'Idiomas mencionados no currículo',
+      skills: [
+        { name: 'Inglês', level: 'secondary' },
+        { name: 'Espanhol', level: 'secondary' },
       ],
     },
   ],
+
   experience: [
     {
-      role: 'Desenvolvedor de Software',
-      company: 'Sua empresa atual',
-      location: 'Remoto / Brasil',
-      period: '2025 — Atual',
+      role: 'Estagiário (Programador)',
+      company: 'Yankton Technologies',
+      location: 'Home-office',
+      period: 'mar 2024 — Atual',
       highlights: [
-        'Descreva aqui sua principal responsabilidade ou impacto no projeto.',
-        'Adicione tecnologias, produtos ou resultados relevantes.',
-        'Prefira frases curtas, objetivas e fáceis de escanear.',
-      ],
-    },
-    {
-      role: 'Experiência anterior',
-      company: 'Empresa / Projeto',
-      location: 'Brasil',
-      period: '2024 — 2025',
-      highlights: [
-        'Inclua aqui outra experiência profissional, estágio ou projeto relevante.',
-        'Você pode remover este card se não precisar dele.',
+        'Atuação com especialização em front-end, desenvolvendo interfaces eficientes e intuitivas com foco em experiência do usuário.',
+        'Participação em projetos para B3 Investimentos, LP Cultura B3, Banco Santander, Teatro Santander, CAAB, Ping Seguro, SM Reguladora, Heineken Quiz e Cultura B3.',
+        'Experiência em projetos envolvendo websites e aplicações.',
       ],
     },
   ],
+
   projects: [
     {
-      name: 'Projeto em destaque',
-      description:
-        'Use este espaço para apresentar um projeto forte do seu portfólio, explicando em uma frase o problema que ele resolve.',
-      link: 'https://github.com/maurodferreira',
-      tags: ['React', 'TypeScript'],
+      name: 'B3 Investimentos',
+      description: 'Participação no desenvolvimento do projeto durante a atuação na Yankton Technologies.',
+      tags: ['Front-end', 'Projeto profissional'],
     },
     {
-      name: 'Projeto pessoal',
-      description:
-        'Outro projeto que demonstre iniciativa, arquitetura, interface ou integração com APIs.',
-      link: 'https://github.com/maurodferreira',
-      tags: ['Vite', 'Node.js'],
+      name: 'LP Cultura B3',
+      description: 'Participação no desenvolvimento do projeto durante a atuação na Yankton Technologies.',
+      tags: ['Front-end', 'Projeto profissional'],
     },
     {
-      name: 'Aplicação web',
-      description:
-        'Troque este conteúdo por um projeto real e adicione o link do repositório ou da aplicação publicada.',
-      tags: ['Frontend', 'UI'],
+      name: 'Banco Santander',
+      description: 'Participação no desenvolvimento de website e aplicativo.',
+      tags: ['Website', 'Aplicativo'],
+    },
+    {
+      name: 'Teatro Santander',
+      description: 'Participação no desenvolvimento do projeto durante a atuação na Yankton Technologies.',
+      tags: ['Front-end', 'Projeto profissional'],
+    },
+    {
+      name: 'CAAB',
+      description: 'Participação em projeto da Caixa de Assistência dos Advogados da Bahia.',
+      tags: ['Front-end', 'Projeto profissional'],
+    },
+    {
+      name: 'Ping Seguro',
+      description: 'Participação no desenvolvimento do aplicativo Ping Seguro.',
+      tags: ['Aplicativo', 'Projeto profissional'],
+    },
+    {
+      name: 'SM Reguladora',
+      description: 'Participação no desenvolvimento do projeto durante a atuação na Yankton Technologies.',
+      tags: ['Front-end', 'Projeto profissional'],
+    },
+    {
+      name: 'Heineken Quiz',
+      description: 'Participação no desenvolvimento do projeto Heineken Quiz.',
+      tags: ['Front-end', 'Projeto profissional'],
+    },
+    {
+      name: 'Cultura B3',
+      description: 'Participação no desenvolvimento do projeto durante a atuação na Yankton Technologies.',
+      tags: ['Front-end', 'Projeto profissional'],
     },
   ],
+
   education: [
     {
       course: 'Engenharia da Computação',
-      institution: 'Sua instituição de ensino',
-      location: 'Paraná, Brasil',
-      period: '2023 — Atual',
+      institution: 'Universidade Tecnológica Federal do Paraná (UTFPR)',
+      location: 'Cornélio Procópio, Paraná',
+      period: 'jul 2023 — conclusão prevista em 2027',
     },
     {
-      course: 'Curso / Certificação',
-      institution: 'Instituição',
-      location: 'Online',
-      period: '2024',
+      course: 'Ensino Médio',
+      institution: 'Escola Águia Master',
+      location: 'Cornélio Procópio, Paraná',
+      period: 'Concluído em 2022',
     },
   ],
 }
