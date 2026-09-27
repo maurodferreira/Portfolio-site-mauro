@@ -8,7 +8,7 @@ const contacts = [
   portfolio.personal.phone
     ? {
         label: 'Telefone',
-        href: `tel:${portfolio.personal.phone.replace(/[^\\d+]/g, '')}`,
+        href: `tel:${portfolio.personal.phone.replace(/[^\d+]/g, '')}`,
         icon: 'bi-telephone',
         external: false,
       }
