@@ -1,6 +1,10 @@
-import { portfolio } from '../data/portfolio'
+import type { PortfolioData } from '../types/portfolio'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
+
+interface SkillsProps {
+  data: PortfolioData
+}
 
 function getInitials(text: string) {
   return text
@@ -11,13 +15,18 @@ function getInitials(text: string) {
     .toUpperCase()
 }
 
-export function Skills() {
+export function Skills({ data }: SkillsProps) {
   return (
     <div className="section-content container-main">
-      <SectionHeading index="02" title="Skills" subtitle="Tecnologias e ferramentas que fazem parte do meu dia a dia." />
+      <SectionHeading
+        index="02"
+        title={data.ui.sections.skills}
+        subtitle={data.ui.sections.skillsSubtitle}
+      />
+
       <div className="skills-grid">
-        {portfolio.skills.map((category, index) => (
-          <Reveal key={category.name} delay={index * 0.06}>
+        {data.skills.map((category, index) => (
+          <Reveal key={category.name} delay={index * 0.05}>
             <article className="skill-card">
               <div className="skill-card-header">
                 <span className="skill-icon">{getInitials(category.name)}</span>
@@ -26,6 +35,7 @@ export function Skills() {
                   <p>{category.description}</p>
                 </div>
               </div>
+
               <div className="skill-tags">
                 {[...category.skills]
                   .sort((a, b) => Number(b.level === 'primary') - Number(a.level === 'primary'))

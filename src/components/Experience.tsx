@@ -1,21 +1,26 @@
-import { portfolio } from '../data/portfolio'
+import type { PortfolioData } from '../types/portfolio'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
-export function Experience() {
+interface ExperienceProps {
+  data: PortfolioData
+}
+
+export function Experience({ data }: ExperienceProps) {
   return (
     <div className="section-content container-main">
       <SectionHeading
         index="03"
-        title="Experiência"
-        subtitle={`${portfolio.experience.length} experiências • ${portfolio.projects.length} projetos`}
+        title={data.ui.sections.experience}
+        subtitle={data.ui.sections.experienceSubtitle}
       />
 
-      <div className="experience-track" aria-label="Experiências profissionais">
-        {portfolio.experience.map((item, index) => (
+      <div className="experience-track" aria-label={data.ui.sections.experience}>
+        {data.experience.map((item, index) => (
           <Reveal key={`${item.company}-${item.role}`} delay={index * 0.08} className="experience-item">
             <div className="experience-date">{item.period}</div>
             <span className="timeline-dot" aria-hidden="true" />
+
             <article className="experience-card">
               <p className="eyebrow">{item.company}</p>
               <h3>{item.role}</h3>
@@ -28,35 +33,6 @@ export function Experience() {
             </article>
           </Reveal>
         ))}
-      </div>
-
-      <div className="projects-block">
-        <Reveal>
-          <h3 className="projects-title">Projetos</h3>
-        </Reveal>
-        <div className="projects-grid">
-          {portfolio.projects.map((project, index) => (
-            <Reveal key={project.name} delay={index * 0.06}>
-              <article className="project-card">
-                <div>
-                  <div className="project-topline">
-                    <i className="bi bi-folder2-open" aria-hidden="true" />
-                    {project.link && (
-                      <a href={project.link} target="_blank" rel="noreferrer" aria-label={`Abrir ${project.name}`}>
-                        <i className="bi bi-arrow-up-right" aria-hidden="true" />
-                      </a>
-                    )}
-                  </div>
-                  <h4>{project.name}</h4>
-                  <p>{project.description}</p>
-                </div>
-                <div className="project-tags">
-                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </div>
   )

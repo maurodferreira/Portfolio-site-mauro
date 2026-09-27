@@ -1,13 +1,17 @@
-import { portfolio } from '../data/portfolio'
+import type { PortfolioData } from '../types/portfolio'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
-export function About() {
+interface AboutProps {
+  data: PortfolioData
+}
+
+export function About({ data }: AboutProps) {
   return (
     <div className="section-content container-main">
-      <SectionHeading index="01" title="Sobre" />
+      <SectionHeading index="01" title={data.ui.sections.about} />
       <Reveal delay={0.08}>
-        <p className="summary-text">{portfolio.summary}</p>
+        <p className="summary-text">{data.summary}</p>
       </Reveal>
     </div>
   )

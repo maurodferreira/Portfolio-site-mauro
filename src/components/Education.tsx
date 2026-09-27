@@ -1,13 +1,22 @@
-import { portfolio } from '../data/portfolio'
+import type { PortfolioData } from '../types/portfolio'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
-export function Education() {
+interface EducationProps {
+  data: PortfolioData
+}
+
+export function Education({ data }: EducationProps) {
   return (
     <div className="section-content container-main">
-      <SectionHeading index="04" title="Educação" subtitle={`${portfolio.education.length} formações e certificações`} />
+      <SectionHeading
+        index="05"
+        title={data.ui.sections.education}
+        subtitle={data.ui.sections.educationSubtitle}
+      />
+
       <div className="education-list">
-        {portfolio.education.map((item, index) => (
+        {data.education.map((item, index) => (
           <Reveal key={`${item.course}-${item.institution}`} delay={index * 0.08}>
             <article className="education-item">
               <span className="education-dot" aria-hidden="true" />

@@ -1,28 +1,33 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { portfolio } from '../data/portfolio'
+import type { PortfolioData } from '../types/portfolio'
 
-const contacts = [
-  portfolio.personal.email
-    ? { label: 'Email', href: `mailto:${portfolio.personal.email}`, icon: 'bi-envelope', external: false }
-    : null,
-  portfolio.personal.phone
-    ? {
-        label: 'Telefone',
-        href: `tel:${portfolio.personal.phone.replace(/[^\d+]/g, '')}`,
-        icon: 'bi-telephone',
-        external: false,
-      }
-    : null,
-  portfolio.personal.github
-    ? { label: 'GitHub', href: portfolio.personal.github, icon: 'bi-github', external: true }
-    : null,
-  portfolio.personal.linkedin
-    ? { label: 'LinkedIn', href: portfolio.personal.linkedin, icon: 'bi-linkedin', external: true }
-    : null,
-].filter((contact): contact is NonNullable<typeof contact> => contact !== null)
+interface HeroProps {
+  data: PortfolioData
+}
 
-export function Hero() {
+export function Hero({ data }: HeroProps) {
   const reduceMotion = useReducedMotion()
+
+  const contacts = [
+    data.personal.email
+      ? { label: data.ui.hero.email, href: `mailto:${data.personal.email}`, icon: 'bi-envelope', external: false }
+      : null,
+    data.personal.phone
+      ? {
+          label: data.ui.hero.phone,
+          href: `tel:${data.personal.phone.replace(/[^\d+]/g, '')}`,
+          icon: 'bi-telephone',
+          external: false,
+        }
+      : null,
+    data.personal.github
+      ? { label: data.ui.hero.github, href: data.personal.github, icon: 'bi-github', external: true }
+      : null,
+    data.personal.linkedin
+      ? { label: data.ui.hero.linkedin, href: data.personal.linkedin, icon: 'bi-linkedin', external: true }
+      : null,
+  ].filter((contact): contact is NonNullable<typeof contact> => contact !== null)
+
   const enter = (index: number) => ({
     initial: reduceMotion ? false : { opacity: 0, y: 28 },
     animate: { opacity: 1, y: 0 },
@@ -32,21 +37,24 @@ export function Hero() {
   return (
     <section className="hero-section" id="top">
       <div className="dot-grid" aria-hidden="true" />
+
       <div className="hero-content container-main">
         <motion.div {...enter(0)} className="hero-meta">
-          <div className="avatar-placeholder" aria-label={`Foto de ${portfolio.personal.fullName}`}>
-            <span>{portfolio.personal.initials}</span>
+          <div className="avatar-placeholder" aria-label={`Foto de ${data.personal.fullName}`}>
+            <span>{data.personal.initials}</span>
           </div>
+
           <span className="location-pill">
             <i className="bi bi-geo-alt" aria-hidden="true" />
-            {portfolio.personal.location}
+            {data.personal.location}
           </span>
         </motion.div>
 
-        <motion.h1 {...enter(1)}>{portfolio.personal.fullName}</motion.h1>
-        <motion.p {...enter(2)} className="hero-title">{portfolio.personal.title}</motion.p>
+        <motion.h1 {...enter(1)}>{data.personal.fullName}</motion.h1>
+        <motion.p {...enter(2)} className="hero-title">{data.personal.title}</motion.p>
+        <motion.p {...enter(3)} className="hero-subtitle">{data.personal.subtitle}</motion.p>
 
-        <motion.div {...enter(3)} className="contact-list">
+        <motion.div {...enter(4)} className="contact-list">
           {contacts.map((contact) => (
             <a
               key={contact.label}
@@ -59,10 +67,11 @@ export function Hero() {
               {contact.label}
             </a>
           ))}
-          {portfolio.personal.website && (
-            <a href={portfolio.personal.website} target="_blank" rel="noreferrer" className="contact-pill">
+
+          {data.personal.website && (
+            <a href={data.personal.website} target="_blank" rel="noreferrer" className="contact-pill">
               <i className="bi bi-globe2" aria-hidden="true" />
-              Website
+              {data.ui.hero.website}
             </a>
           )}
         </motion.div>
@@ -74,7 +83,7 @@ export function Hero() {
         type="button"
         onClick={() => document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        <span>Role para explorar</span>
+        <span>{data.ui.hero.scroll}</span>
         <i className="bi bi-chevron-down" aria-hidden="true" />
       </motion.button>
     </section>
