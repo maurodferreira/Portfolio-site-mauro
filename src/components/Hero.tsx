@@ -2,11 +2,24 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { portfolio } from '../data/portfolio'
 
 const contacts = [
-  { label: 'Email', href: `mailto:${portfolio.personal.email}`, icon: 'bi-envelope', external: false },
-  { label: 'Telefone', href: `tel:${portfolio.personal.phone.replace(/[^\d+]/g, '')}`, icon: 'bi-telephone', external: false },
-  { label: 'GitHub', href: portfolio.personal.github, icon: 'bi-github', external: true },
-  { label: 'LinkedIn', href: portfolio.personal.linkedin, icon: 'bi-linkedin', external: true },
-]
+  portfolio.personal.email
+    ? { label: 'Email', href: `mailto:${portfolio.personal.email}`, icon: 'bi-envelope', external: false }
+    : null,
+  portfolio.personal.phone
+    ? {
+        label: 'Telefone',
+        href: `tel:${portfolio.personal.phone.replace(/[^\\d+]/g, '')}`,
+        icon: 'bi-telephone',
+        external: false,
+      }
+    : null,
+  portfolio.personal.github
+    ? { label: 'GitHub', href: portfolio.personal.github, icon: 'bi-github', external: true }
+    : null,
+  portfolio.personal.linkedin
+    ? { label: 'LinkedIn', href: portfolio.personal.linkedin, icon: 'bi-linkedin', external: true }
+    : null,
+].filter((contact): contact is NonNullable<typeof contact> => contact !== null)
 
 export function Hero() {
   const reduceMotion = useReducedMotion()
