@@ -15,12 +15,12 @@ const sharedPersonal = {
 const pt: PortfolioData = {
   personal: {
     ...sharedPersonal,
-    title: 'Desenvolvedor de Software',
+    title: 'Desenvolvedor Full Stack',
     subtitle: 'React • TypeScript • Next.js • Node.js',
   },
 
   summary:
-    'Desenvolvedor de Software com experiência na construção e manutenção de aplicações web para projetos de diferentes segmentos. Minha atuação é concentrada principalmente em React e TypeScript, trabalhando desde a implementação de interfaces e regras de negócio até integração com APIs e manutenção de sistemas existentes. Já participei de projetos para marcas como Santander, B3, Heineken e Museu Light, além de desenvolver produtos próprios como o CodeMpi.',
+    'Desenvolvedor Full Stack com experiência na construção e manutenção de aplicações web para projetos de diferentes segmentos. Atuo profissionalmente em regime PJ, trabalhando principalmente com React, TypeScript, Next.js, Node.js e NestJS, desde a implementação de interfaces e regras de negócio até integração com APIs, bancos de dados e manutenção de sistemas existentes. Já participei de projetos para marcas como Santander, B3, Heineken e Museu Light, além de desenvolver produtos próprios como o CodeMpi.',
 
   skills: [
     {
@@ -93,14 +93,14 @@ const pt: PortfolioData = {
 
   experience: [
     {
-      role: 'Estagiário (Programador)',
+      role: 'Desenvolvedor Full Stack',
       company: 'Yankton Technologies',
-      location: 'Home-office',
+      location: 'Home-office • PJ',
       period: 'mar 2024 — Atual',
       highlights: [
-        'Desenvolvimento e manutenção de aplicações web com foco em React, TypeScript, Next.js e Vite.',
+        'Atuação como Desenvolvedor Full Stack em regime PJ, no desenvolvimento e manutenção de aplicações web.',
         'Implementação de interfaces responsivas, regras de negócio, formulários, fluxos de agendamento e integração com APIs.',
-        'Atuação também em backend com NestJS e TypeORM, além da manutenção de sistemas legados.',
+        'Desenvolvimento de front-end com React, TypeScript, Next.js e Vite, além de backend com Node.js, NestJS e TypeORM.'
         'Participação em projetos para Santander, B3, Museu Light, Teatro Santander, Heineken, CAAB, Ping Seguro e outros clientes.',
       ],
     },
@@ -190,12 +190,12 @@ const pt: PortfolioData = {
   leadership: [
     {
       organization: 'Ordem DeMolay — Capítulo Mozart Vallim nº 793',
-      role: 'Liderança e atividades extracurriculares',
+      role: 'Escrivão e Mestre Conselheiro',
       period: '2017 — 2023',
       highlights: [
-        'Atuação como Escrivão do capítulo, com duas Canetas de Ouro em 2021.',
-        'Atuação como Mestre Conselheiro.',
-        'Reconhecimento por Serviço Meritório em dezembro de 2023.',
+        'Escrivão: responsável por documentos, atas e organização burocrática do Capítulo; recebeu duas Canetas de Ouro em 2021.',
+        'Mestre Conselheiro: presidente eleito do Capítulo, responsável por conduzir reuniões, representar o grupo e coordenar os projetos da gestão.',
+        'Concluiu os critérios da Campanha Nacional de Incentivo à Excelência e recebeu o Prêmio de Past Mestre Conselheiro por Serviços Meritórios em dezembro de 2023.'
       ],
     },
   ],
@@ -263,12 +263,12 @@ const en: PortfolioData = {
   personal: {
     ...sharedPersonal,
     location: 'Cornélio Procópio, Paraná, Brazil',
-    title: 'Software Developer',
+    title: 'Full-Stack Developer',
     subtitle: 'React • TypeScript • Next.js • Node.js',
   },
 
   summary:
-    'Software Developer with experience building and maintaining web applications across different industries. My work is mainly focused on React and TypeScript, covering user interfaces, business rules, API integration and maintenance of existing systems. I have contributed to projects for brands such as Santander, B3, Heineken and Museu Light, while also building personal products such as CodeMpi.',
+    'Full-Stack Developer with experience building and maintaining web applications across different industries. I work professionally as an independent contractor, mainly with React, TypeScript, Next.js, Node.js and NestJS, covering user interfaces, business rules, API integrations, databases and maintenance of existing systems. I have contributed to projects for brands such as Santander, B3, Heineken and Museu Light, while also building personal products such as CodeMpi.',
 
   skills: [
     {
@@ -341,14 +341,14 @@ const en: PortfolioData = {
 
   experience: [
     {
-      role: 'Programming Intern',
+      role: 'Full-Stack Developer',
       company: 'Yankton Technologies',
-      location: 'Remote',
+      location: 'Remote • Contractor',
       period: 'Mar 2024 — Present',
       highlights: [
-        'Development and maintenance of web applications focused on React, TypeScript, Next.js and Vite.',
+        'Full-Stack Developer working as an independent contractor on the development and maintenance of web applications.',
         'Implementation of responsive interfaces, business rules, forms, scheduling flows and API integrations.',
-        'Back-end contributions with NestJS and TypeORM, plus maintenance of legacy systems.',
+        'Front-end development with React, TypeScript, Next.js and Vite, plus back-end work with Node.js, NestJS and TypeORM.'
         'Contributed to projects for Santander, B3, Museu Light, Teatro Santander, Heineken, CAAB, Ping Seguro and other clients.',
       ],
     },
@@ -438,12 +438,12 @@ const en: PortfolioData = {
   leadership: [
     {
       organization: 'DeMolay Order — Mozart Vallim Chapter no. 793',
-      role: 'Leadership and extracurricular activities',
+      role: 'Chapter Scribe and Master Councilor',
       period: '2017 — 2023',
       highlights: [
-        'Served as Chapter Scribe, receiving two Golden Pen recognitions in 2021.',
-        'Served as Master Councilor.',
-        'Received a Meritorious Service recognition in December 2023.',
+        'Chapter Scribe: responsible for documents, meeting minutes and the Chapter’s administrative records; received two Golden Pen recognitions in 2021.',
+        'Master Councilor: elected president of the Chapter, responsible for leading meetings, representing the group and coordinating projects during the term.',
+        'Completed the National Excellence Campaign criteria and received the Past Master Councilor Meritorious Service Award in December 2023.'
       ],
     },
   ],
