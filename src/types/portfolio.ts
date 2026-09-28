@@ -13,6 +13,7 @@ export interface PersonalData {
   linkedin: string
   website?: string
   initials: string
+  avatar?: string
 }
 
 export interface SkillItem {
