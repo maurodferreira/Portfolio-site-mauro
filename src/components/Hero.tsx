@@ -84,16 +84,6 @@ export function Hero({ data }: HeroProps) {
           )}
         </motion.div>
       </div>
-
-      <motion.button
-        {...enter(6)}
-        className="scroll-cue"
-        type="button"
-        onClick={() => document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' })}
-      >
-        <span>{data.ui.hero.scroll}</span>
-        <i className="bi bi-chevron-down" aria-hidden="true" />
-      </motion.button>
     </section>
   )
 }
