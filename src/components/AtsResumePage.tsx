@@ -8,6 +8,16 @@ interface AtsResumePageProps {
 }
 
 export function AtsResumePage({ data, language, onLanguageChange, onBack }: AtsResumePageProps) {
+  const printResume = () => {
+    const previousTitle = document.title
+    document.title = language === 'pt'
+      ? 'Mauro-Ferreira-Curriculo-ATS-PT'
+      : 'Mauro-Ferreira-ATS-Resume-EN'
+
+    window.print()
+    document.title = previousTitle
+  }
+
   const allSkills = data.skills.map((category) => ({
     category: category.name,
     values: category.skills.map((skill) => skill.name).join(', '),
@@ -39,7 +49,7 @@ export function AtsResumePage({ data, language, onLanguageChange, onBack }: AtsR
             </button>
           </div>
 
-          <button className="resume-print-button" type="button" onClick={() => window.print()}>
+          <button className="resume-print-button" type="button" onClick={printResume}>
             <i className="bi bi-printer" aria-hidden="true" />
             {data.ui.resume.print}
           </button>
