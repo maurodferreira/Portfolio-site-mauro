@@ -22,6 +22,7 @@ function scrollToSection(id: string) {
 export function Navbar({ data, language, onLanguageChange, onOpenResume }: NavbarProps) {
   const { theme, toggleTheme } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [resumeMenuOpen, setResumeMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
 
@@ -50,6 +51,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
       if (event.key === 'Escape') {
         setSearchOpen(false)
         setMenuOpen(false)
+        setResumeMenuOpen(false)
       }
     }
 
@@ -105,6 +107,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
 
   const openResume = (variant: ResumeVariant) => {
     setMenuOpen(false)
+    setResumeMenuOpen(false)
     onOpenResume(variant)
   }
 
@@ -156,10 +159,46 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
               {language.toUpperCase()}
             </button>
 
-            <button className="resume-button desktop-resume" type="button" onClick={() => onOpenResume('visual')}>
-              <i className="bi bi-file-earmark-arrow-down" aria-hidden="true" />
-              {data.ui.navigation.resume}
-            </button>
+            <div className="resume-selector desktop-resume">
+              <button
+                className="resume-button"
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={resumeMenuOpen}
+                onClick={() => setResumeMenuOpen((current) => !current)}
+              >
+                <i className="bi bi-file-earmark-arrow-down" aria-hidden="true" />
+                {data.ui.navigation.resume}
+                <i
+                  className={`bi bi-chevron-down resume-selector-chevron ${resumeMenuOpen ? 'open' : ''}`}
+                  aria-hidden="true"
+                />
+              </button>
+
+              {resumeMenuOpen && (
+                <div className="resume-selector-menu" role="menu">
+                  <button type="button" role="menuitem" onClick={() => openResume('visual')}>
+                    <span className="resume-selector-icon">
+                      <i className="bi bi-file-earmark-person" aria-hidden="true" />
+                    </span>
+                    <span>
+                      <strong>{data.ui.navigation.resumeVisual}</strong>
+                      <small>{language === 'pt' ? 'Versão visual com foto e layout' : 'Visual version with photo and layout'}</small>
+                    </span>
+                  </button>
+
+                  <button type="button" role="menuitem" onClick={() => openResume('ats')}>
+                    <span className="resume-selector-icon">
+                      <i className="bi bi-file-earmark-text" aria-hidden="true" />
+                    </span>
+                    <span>
+                      <strong>{data.ui.navigation.resumeAts}</strong>
+                      <small>{language === 'pt' ? 'Versão linear para recrutamento' : 'Linear version for recruiting systems'}</small>
+                    </span>
+                  </button>
+                </div>
+              )}
+            </div>
 
             <button
               className="icon-button mobile-menu-button"
