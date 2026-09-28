@@ -8,6 +8,16 @@ interface ResumePageProps {
 }
 
 export function ResumePage({ data, language, onLanguageChange, onBack }: ResumePageProps) {
+  const printResume = () => {
+    const previousTitle = document.title
+    document.title = language === 'pt'
+      ? 'Mauro-Ferreira-Curriculo-FullStack-PT'
+      : 'Mauro-Ferreira-FullStack-Resume-EN'
+
+    window.print()
+    document.title = previousTitle
+  }
+
   const primarySkills = data.skills.flatMap((category) =>
     category.skills.filter((skill) => skill.level === 'primary').map((skill) => skill.name),
   )
@@ -42,7 +52,7 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
             </button>
           </div>
 
-          <button className="resume-print-button" type="button" onClick={() => window.print()}>
+          <button className="resume-print-button" type="button" onClick={printResume}>
             <i className="bi bi-printer" aria-hidden="true" />
             {data.ui.resume.print}
           </button>
