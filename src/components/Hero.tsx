@@ -15,9 +15,9 @@ export function Hero({ data }: HeroProps) {
     data.personal.phone
       ? {
           label: data.ui.hero.phone,
-          href: `tel:${data.personal.phone.replace(/[^\d+]/g, '')}`,
-          icon: 'bi-telephone',
-          external: false,
+          href: `https://wa.me/${data.personal.phone.replace(/\D/g, '')}`,
+          icon: 'bi-whatsapp',
+          external: true,
         }
       : null,
     data.personal.github
