@@ -41,7 +41,15 @@ export function Hero({ data }: HeroProps) {
       <div className="hero-content container-main">
         <motion.div {...enter(0)} className="hero-meta">
           <div className="avatar-placeholder" aria-label={`Foto de ${data.personal.fullName}`}>
-            <span>{data.personal.initials}</span>
+            {data.personal.avatar ? (
+              <img
+                src={data.personal.avatar}
+                alt={data.personal.fullName}
+                className="hero-avatar-image"
+              />
+            ) : (
+              <span>{data.personal.initials}</span>
+            )}
           </div>
 
           <span className="location-pill">
