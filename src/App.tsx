@@ -52,7 +52,7 @@ function App() {
     if (resumeVariant) {
       const url = new URL(window.location.href)
       url.searchParams.set('lang', language)
-      url.searchParams.set('resume', resumeVariant)
+      url.searchParams.delete('resume')
       window.history.replaceState({}, '', url)
     }
 
