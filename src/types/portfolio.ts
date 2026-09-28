@@ -7,6 +7,7 @@ export interface PersonalData {
   shortName: string
   title: string
   subtitle: string
+  availability: string
   location: string
   email: string
   phone: string
@@ -39,6 +40,8 @@ export interface ExperienceItem {
 export interface ProjectItem {
   name: string
   description: string
+  contribution?: string
+  highlights?: string[]
   link?: string
   tags: string[]
 }
@@ -102,6 +105,11 @@ export interface UiStrings {
     coursesSubtitle: string
     leadership: string
     leadershipSubtitle: string
+    projectContribution: string
+    projectHighlights: string
+    projectOpen: string
+    contactTitle: string
+    contactSubtitle: string
   }
   search: {
     placeholder: string
