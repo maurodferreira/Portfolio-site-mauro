@@ -18,6 +18,7 @@ const pt: PortfolioData = {
     ...sharedPersonal,
     title: 'Desenvolvedor Full Stack',
     subtitle: 'React • TypeScript • Next.js • Node.js',
+    availability: 'Remoto • PJ',
   },
 
   summary:
@@ -112,6 +113,12 @@ const pt: PortfolioData = {
       name: 'CodeMpi',
       description:
         'Plataforma educacional para aprender programação do zero a níveis avançados, com aulas, exercícios, revisão de conceitos, editor CodeMirror e experiência mobile-first.',
+      contribution:
+        'Planejamento do fluxo de aprendizagem e implementação das aulas, exercícios, editor de código, revisão de conceitos e refinamento da experiência em desktop e mobile.',
+      highlights: [
+        'Editor CodeMirror integrado ao fluxo de prática.',
+        'Sistema de exercícios, dicas, XP e revisão de conceitos.',
+      ],
       link: 'https://github.com/maurodferreira/CodeMpi',
       tags: ['React', 'TypeScript', 'Vite', 'CodeMirror'],
     },
@@ -119,24 +126,48 @@ const pt: PortfolioData = {
       name: 'Museu Light',
       description:
         'Evolução do site e dos fluxos de visitação, incluindo conteúdo interativo, responsividade, agendamentos, integrações com API e manutenção de sistemas modernos e legados.',
+      contribution:
+        'Atuação no frontend Next.js e apoio no backend NestJS, com manutenção de funcionalidades atuais e integração com partes do sistema legado.',
+      highlights: [
+        'Páginas de Ebooks, Jogos, Playlists e Visite.',
+        'Fluxos de visitação, agendamento e integração com API.',
+      ],
       tags: ['Next.js', 'NestJS', 'TypeORM', 'AngularJS'],
     },
     {
       name: 'Heineken GameTalent',
       description:
         'Desenvolvimento de experiências interativas em React, incluindo o módulo Mestre das Palavras com exercícios, dicas, cronômetro, critérios de aprovação e fluxo de conclusão.',
+      contribution:
+        'Implementação do módulo Mestre das Palavras e das regras de progressão, feedback, erro e conclusão da atividade.',
+      highlights: [
+        '6 exercícios com critério de aprovação de 70%.',
+        'Dicas, cronômetro e tratamento do fluxo de erro/conclusão.',
+      ],
       tags: ['React', 'JavaScript', 'UX', 'Lógica de jogo'],
     },
     {
       name: 'NR01',
       description:
         'Aplicação com fluxo de avaliação psicossocial, frontend em React/TypeScript e backend em NestJS, utilizando formulários validados e persistência em PostgreSQL.',
+      contribution:
+        'Construção e integração do fluxo psicossocial entre frontend e API, com formulários tipados, validação e persistência de dados.',
+      highlights: [
+        'React Query, React Hook Form e Zod no frontend.',
+        'NestJS, TypeORM e PostgreSQL no backend.',
+      ],
       tags: ['React', 'MUI', 'NestJS', 'PostgreSQL'],
     },
     {
       name: 'CAAB',
       description:
         'Trabalho em fluxos de agendamento com horários, indisponibilidades, validações e testes de regras de negócio.',
+      contribution:
+        'Validação funcional e QA dos cenários de agendamento, indisponibilidades e regras de horários.',
+      highlights: [
+        'Testes de horários, bloqueios e indisponibilidades.',
+        'Validação de comportamento e regras de negócio.',
+      ],
       tags: ['Agendamento', 'Regras de negócio', 'QA'],
     },
   ],
@@ -240,6 +271,11 @@ const pt: PortfolioData = {
       coursesSubtitle: 'Formação complementar relevante para desenvolvimento e tecnologia.',
       leadership: 'Liderança & Atividades Extracurriculares',
       leadershipSubtitle: 'Experiências que desenvolveram liderança, comunicação, organização e responsabilidade.',
+      projectContribution: 'Minha atuação',
+      projectHighlights: 'Destaques',
+      projectOpen: 'Ver código',
+      contactTitle: 'Vamos conversar?',
+      contactSubtitle: 'Se meu perfil fizer sentido para sua equipe ou projeto, estes são os canais mais diretos para falar comigo.',
     },
     search: {
       placeholder: 'Pesquisar habilidades, projetos, cursos e seções...',
@@ -271,6 +307,7 @@ const en: PortfolioData = {
     location: 'Cornélio Procópio, Paraná, Brazil',
     title: 'Full-Stack Developer',
     subtitle: 'React • TypeScript • Next.js • Node.js',
+    availability: 'Remote • Contractor',
   },
 
   summary:
@@ -365,6 +402,12 @@ const en: PortfolioData = {
       name: 'CodeMpi',
       description:
         'Educational platform for learning programming from beginner to advanced levels, featuring lessons, exercises, concept review, a CodeMirror editor and a mobile-first experience.',
+      contribution:
+        'Planned the learning flow and implemented lessons, exercises, the code editor, concept review and UX refinements across desktop and mobile.',
+      highlights: [
+        'CodeMirror editor integrated into the practice flow.',
+        'Exercise, hint, XP and concept-review system.',
+      ],
       link: 'https://github.com/maurodferreira/CodeMpi',
       tags: ['React', 'TypeScript', 'Vite', 'CodeMirror'],
     },
@@ -372,24 +415,48 @@ const en: PortfolioData = {
       name: 'Museu Light',
       description:
         'Evolution of the website and visitor flows, including interactive content, responsive interfaces, scheduling, API integrations and maintenance across modern and legacy systems.',
+      contribution:
+        'Worked on the Next.js frontend and supported the NestJS backend, maintaining current features and integrating parts of the legacy system.',
+      highlights: [
+        'Ebooks, Games, Playlists and Visit pages.',
+        'Visitor, scheduling and API integration flows.',
+      ],
       tags: ['Next.js', 'NestJS', 'TypeORM', 'AngularJS'],
     },
     {
       name: 'Heineken GameTalent',
       description:
         'Development of interactive React experiences, including the Mestre das Palavras module with exercises, hints, timer, passing criteria and completion flows.',
+      contribution:
+        'Implemented the Mestre das Palavras module and its progression, feedback, failure and completion rules.',
+      highlights: [
+        '6 exercises with a 70% passing threshold.',
+        'Hints, timer and failure/completion flow handling.',
+      ],
       tags: ['React', 'JavaScript', 'UX', 'Game logic'],
     },
     {
       name: 'NR01',
       description:
         'Application with a psychosocial assessment flow, React/TypeScript front-end and NestJS back-end, using validated forms and PostgreSQL persistence.',
+      contribution:
+        'Built and integrated the psychosocial flow between frontend and API, with typed forms, validation and data persistence.',
+      highlights: [
+        'React Query, React Hook Form and Zod on the frontend.',
+        'NestJS, TypeORM and PostgreSQL on the backend.',
+      ],
       tags: ['React', 'MUI', 'NestJS', 'PostgreSQL'],
     },
     {
       name: 'CAAB',
       description:
         'Work on scheduling flows with time slots, unavailability rules, validations and business-rule testing.',
+      contribution:
+        'Performed functional validation and QA for scheduling scenarios, unavailability and time-slot rules.',
+      highlights: [
+        'Testing of time slots, blocks and unavailability.',
+        'Validation of behavior and business rules.',
+      ],
       tags: ['Scheduling', 'Business rules', 'QA'],
     },
   ],
@@ -493,6 +560,11 @@ const en: PortfolioData = {
       coursesSubtitle: 'Additional education relevant to software development and technology.',
       leadership: 'Leadership & Extracurricular Activities',
       leadershipSubtitle: 'Experiences that strengthened leadership, communication, organization and responsibility.',
+      projectContribution: 'My contribution',
+      projectHighlights: 'Highlights',
+      projectOpen: 'View code',
+      contactTitle: 'Let’s talk?',
+      contactSubtitle: 'If my profile fits your team or project, these are the most direct ways to reach me.',
     },
     search: {
       placeholder: 'Search technical skills, projects, courses and sections...',
