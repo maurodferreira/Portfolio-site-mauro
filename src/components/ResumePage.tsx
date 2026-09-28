@@ -83,7 +83,13 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
 
           <div className="resume-contact">
             <span><i className="bi bi-geo-alt" aria-hidden="true" />{data.personal.location}</span>
-            <a href={`mailto:${data.personal.email}`}><i className="bi bi-envelope" aria-hidden="true" />{data.personal.email}</a>
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="bi bi-envelope" aria-hidden="true" />{data.personal.email}
+            </a>
             {data.personal.phone && (
               <a
                 href={`https://wa.me/${data.personal.phone.replace(/\D/g, '')}`}

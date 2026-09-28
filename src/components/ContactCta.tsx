@@ -24,7 +24,12 @@ export function ContactCta({ data }: ContactCtaProps) {
             </div>
 
             <div className="contact-cta-actions">
-              <a href={`mailto:${data.personal.email}`} className="contact-cta-link">
+              <a
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-cta-link"
+              >
                 <i className="bi bi-envelope" aria-hidden="true" />
                 <span>Email</span>
               </a>

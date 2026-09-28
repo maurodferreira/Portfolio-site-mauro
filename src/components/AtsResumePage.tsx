@@ -63,7 +63,13 @@ export function AtsResumePage({ data, language, onLanguageChange, onBack }: AtsR
 
           <div className="ats-contact-line">
             <span>{data.personal.location}</span>
-            <a href={`mailto:${data.personal.email}`}>{data.personal.email}</a>
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {data.personal.email}
+            </a>
             {data.personal.phone && (
               <a
                 href={`https://wa.me/${data.personal.phone.replace(/\D/g, '')}`}

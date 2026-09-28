@@ -10,7 +10,7 @@ export function Hero({ data }: HeroProps) {
 
   const contacts = [
     data.personal.email
-      ? { label: data.ui.hero.email, href: `mailto:${data.personal.email}`, icon: 'bi-envelope', external: false }
+      ? { label: data.ui.hero.email, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`, icon: 'bi-envelope', external: true }
       : null,
     data.personal.phone
       ? {

@@ -12,7 +12,12 @@ export function Footer({ data }: FooterProps) {
 
         <div>
           {data.personal.email && (
-            <a href={`mailto:${data.personal.email}`} aria-label="Email">
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Email"
+            >
               <i className="bi bi-envelope" />
             </a>
           )}
