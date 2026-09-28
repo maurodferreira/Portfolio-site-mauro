@@ -237,9 +237,11 @@
   right: 0;
   top: 56px;
   width: 250px;
+  max-height: calc(100dvh - 76px);
   display: grid;
   gap: 4px;
   padding: 8px;
+  overflow-y: auto;
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--surface-solid);
