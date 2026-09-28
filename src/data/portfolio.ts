@@ -10,6 +10,7 @@ const sharedPersonal = {
   linkedin: '',
   website: '',
   initials: 'MF',
+  avatar: '/profile-mauro.png',
 }
 
 const pt: PortfolioData = {
@@ -100,7 +101,7 @@ const pt: PortfolioData = {
       highlights: [
         'Atuação como Desenvolvedor Full Stack em regime PJ, no desenvolvimento e manutenção de aplicações web.',
         'Implementação de interfaces responsivas, regras de negócio, formulários, fluxos de agendamento e integração com APIs.',
-        'Desenvolvimento de front-end com React, TypeScript, Next.js e Vite, além de backend com Node.js, NestJS e TypeORM.'
+        'Desenvolvimento de front-end com React, TypeScript, Next.js e Vite, além de backend com Node.js, NestJS e TypeORM.',
         'Participação em projetos para Santander, B3, Museu Light, Teatro Santander, Heineken, CAAB, Ping Seguro e outros clientes.',
       ],
     },
@@ -191,7 +192,7 @@ const pt: PortfolioData = {
     {
       organization: 'Ordem DeMolay — Capítulo Mozart Vallim nº 793',
       role: 'Escrivão e Mestre Conselheiro',
-      period: '2017 — 2023',
+      period: '2017 — 2026',
       highlights: [
         'Escrivão: responsável por documentos, atas e organização burocrática do Capítulo; recebeu duas Canetas de Ouro em 2021.',
         'Mestre Conselheiro: presidente eleito do Capítulo, responsável por conduzir reuniões, representar o grupo e coordenar os projetos da gestão.',
@@ -348,7 +349,7 @@ const en: PortfolioData = {
       highlights: [
         'Full-Stack Developer working as an independent contractor on the development and maintenance of web applications.',
         'Implementation of responsive interfaces, business rules, forms, scheduling flows and API integrations.',
-        'Front-end development with React, TypeScript, Next.js and Vite, plus back-end work with Node.js, NestJS and TypeORM.'
+        'Front-end development with React, TypeScript, Next.js and Vite, plus back-end work with Node.js, NestJS and TypeORM.',
         'Contributed to projects for Santander, B3, Museu Light, Teatro Santander, Heineken, CAAB, Ping Seguro and other clients.',
       ],
     },
@@ -439,7 +440,7 @@ const en: PortfolioData = {
     {
       organization: 'DeMolay Order — Mozart Vallim Chapter no. 793',
       role: 'Chapter Scribe and Master Councilor',
-      period: '2017 — 2023',
+      period: '2017 — 2026',
       highlights: [
         'Chapter Scribe: responsible for documents, meeting minutes and the Chapter’s administrative records; received two Golden Pen recognitions in 2021.',
         'Master Councilor: elected president of the Chapter, responsible for leading meetings, representing the group and coordinating projects during the term.',
