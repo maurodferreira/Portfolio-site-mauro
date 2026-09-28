@@ -216,7 +216,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
               <div className="mobile-menu-group">
                 <p className="mobile-menu-label">{data.ui.navigation.menuSections}</p>
 
-                {navItems.slice(0, 5).map((item) => (
+                {navItems.map((item) => (
                   <button
                     key={item.id}
                     type="button"
