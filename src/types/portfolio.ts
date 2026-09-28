@@ -80,7 +80,6 @@ export interface UiStrings {
     menu: string
   }
   hero: {
-    scroll: string
     email: string
     phone: string
     github: string
