@@ -54,6 +54,15 @@ export function AtsResumePage({ data, language, onLanguageChange, onBack }: AtsR
           <div className="ats-contact-line">
             <span>{data.personal.location}</span>
             <a href={`mailto:${data.personal.email}`}>{data.personal.email}</a>
+            {data.personal.phone && (
+              <a
+                href={`https://wa.me/${data.personal.phone.replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {data.personal.phone}
+              </a>
+            )}
             <a href={data.personal.github} target="_blank" rel="noreferrer">github.com/maurodferreira</a>
             <a href={data.personal.linkedin} target="_blank" rel="noreferrer">linkedin.com/in/mauro-diogo-fioravante-ferreira-aa5114291</a>
           </div>
