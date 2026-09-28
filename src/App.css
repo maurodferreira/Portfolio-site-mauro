@@ -441,9 +441,6 @@
   background: var(--primary-soft);
 }
 
-  50% { transform: translateY(6px); opacity: 1; }
-}
-
 /* Shared sections */
 .section-heading {
   display: flex;
