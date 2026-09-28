@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { About } from './components/About'
+import { AtsResumePage } from './components/AtsResumePage'
 import { Courses } from './components/Courses'
 import { Education } from './components/Education'
 import { Experience } from './components/Experience'
@@ -11,7 +12,7 @@ import { Projects } from './components/Projects'
 import { ResumePage } from './components/ResumePage'
 import { Skills } from './components/Skills'
 import { portfolioByLanguage } from './data/portfolio'
-import type { Language } from './types/portfolio'
+import type { Language, ResumeVariant } from './types/portfolio'
 import './App.css'
 
 function getInitialLanguage(): Language {
@@ -24,30 +25,43 @@ function getInitialLanguage(): Language {
   return navigator.language.toLowerCase().startsWith('pt') ? 'pt' : 'en'
 }
 
+function getResumeVariant(): ResumeVariant | null {
+  const value = new URLSearchParams(window.location.search).get('resume')
+  if (value === 'ats') return 'ats'
+  if (value === 'visual' || value === '1') return 'visual'
+  return null
+}
+
 function App() {
   const [language, setLanguage] = useState<Language>(getInitialLanguage)
-  const resumeMode = new URLSearchParams(window.location.search).get('resume') === '1'
+  const resumeVariant = getResumeVariant()
   const data = portfolioByLanguage[language]
 
   useEffect(() => {
     localStorage.setItem('portfolio-language', language)
     document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en'
 
-    if (resumeMode) {
+    if (resumeVariant) {
       const url = new URL(window.location.href)
       url.searchParams.set('lang', language)
+      url.searchParams.set('resume', resumeVariant)
       window.history.replaceState({}, '', url)
     }
 
-    document.title = resumeMode
-      ? `${data.personal.fullName} | ${data.ui.navigation.resume}`
-      : `${data.personal.fullName} | ${data.personal.title}`
-  }, [data, language, resumeMode])
+    const resumeTitle =
+      resumeVariant === 'ats'
+        ? data.ui.navigation.resumeAts
+        : data.ui.navigation.resumeVisual
 
-  const openResume = () => {
+    document.title = resumeVariant
+      ? `${data.personal.fullName} | ${resumeTitle}`
+      : `${data.personal.fullName} | ${data.personal.title}`
+  }, [data, language, resumeVariant])
+
+  const openResume = (variant: ResumeVariant) => {
     const url = new URL(window.location.href)
     url.search = ''
-    url.searchParams.set('resume', '1')
+    url.searchParams.set('resume', variant)
     url.searchParams.set('lang', language)
     window.open(url.toString(), '_blank', 'noopener,noreferrer')
   }
@@ -58,7 +72,18 @@ function App() {
     window.location.href = url.toString()
   }
 
-  if (resumeMode) {
+  if (resumeVariant === 'ats') {
+    return (
+      <AtsResumePage
+        data={data}
+        language={language}
+        onLanguageChange={setLanguage}
+        onBack={backToPortfolio}
+      />
+    )
+  }
+
+  if (resumeVariant === 'visual') {
     return (
       <ResumePage
         data={data}

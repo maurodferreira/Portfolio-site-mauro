@@ -1,5 +1,6 @@
 export type Language = 'pt' | 'en'
 export type SkillLevel = 'primary' | 'secondary'
+export type ResumeVariant = 'visual' | 'ats'
 
 export interface PersonalData {
   fullName: string
@@ -70,6 +71,10 @@ export interface UiStrings {
     projects: string
     education: string
     resume: string
+    resumeVisual: string
+    resumeAts: string
+    menuSections: string
+    menuActions: string
     search: string
     theme: string
     menu: string
@@ -116,7 +121,9 @@ export interface UiStrings {
     skills: string
     education: string
     courses: string
+    leadership: string
     contact: string
+    atsLabel: string
   }
 }
 

@@ -75,6 +75,7 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
             <span><i className="bi bi-geo-alt" aria-hidden="true" />{data.personal.location}</span>
             <a href={`mailto:${data.personal.email}`}><i className="bi bi-envelope" aria-hidden="true" />{data.personal.email}</a>
             <a href={data.personal.github} target="_blank" rel="noreferrer"><i className="bi bi-github" aria-hidden="true" />github.com/maurodferreira</a>
+            <a href={data.personal.linkedin} target="_blank" rel="noreferrer"><i className="bi bi-linkedin" aria-hidden="true" />LinkedIn</a>
           </div>
         </header>
 

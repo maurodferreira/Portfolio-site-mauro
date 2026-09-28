@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Language, PortfolioData } from '../types/portfolio'
+import type { Language, PortfolioData, ResumeVariant } from '../types/portfolio'
 import { useTheme } from '../hooks/useTheme'
 
 interface NavbarProps {
   data: PortfolioData
   language: Language
   onLanguageChange: (language: Language) => void
-  onOpenResume: () => void
+  onOpenResume: (variant: ResumeVariant) => void
 }
 
 interface SearchResult {
@@ -32,6 +32,8 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
       { id: 'experience', label: data.ui.navigation.experience },
       { id: 'projects', label: data.ui.navigation.projects },
       { id: 'education', label: data.ui.navigation.education },
+      { id: 'courses', label: data.ui.sections.courses },
+      { id: 'leadership', label: data.ui.sections.leadership },
     ],
     [data],
   )
@@ -101,6 +103,11 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
     onLanguageChange(language === 'pt' ? 'en' : 'pt')
   }
 
+  const openResume = (variant: ResumeVariant) => {
+    setMenuOpen(false)
+    onOpenResume(variant)
+  }
+
   return (
     <>
       <header className="navbar-shell">
@@ -110,7 +117,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
           </button>
 
           <div className="desktop-nav">
-            {navItems.map((item) => (
+            {navItems.slice(0, 5).map((item) => (
               <button key={item.id} type="button" onClick={() => scrollToSection(item.id)}>
                 {item.label}
               </button>
@@ -135,7 +142,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
               title="Português / English"
               onClick={toggleLanguage}
             >
-              <i className="bi bi-globe2" aria-hidden="true" />
+              <i className="bi bi-translate" aria-hidden="true" />
               {language.toUpperCase()}
             </button>
 
@@ -149,7 +156,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
               <i className={`bi ${theme === 'dark' ? 'bi-sun' : 'bi-moon-stars'}`} aria-hidden="true" />
             </button>
 
-            <button className="resume-button desktop-resume" type="button" onClick={onOpenResume}>
+            <button className="resume-button desktop-resume" type="button" onClick={() => onOpenResume('visual')}>
               <i className="bi bi-file-earmark-arrow-down" aria-hidden="true" />
               {data.ui.navigation.resume}
             </button>
@@ -166,39 +173,50 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
           </div>
 
           {menuOpen && (
-            <div className="mobile-menu">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => {
-                    setMenuOpen(false)
-                    scrollToSection(item.id)
-                  }}
-                >
-                  {item.label}
+            <div className="mobile-menu mobile-menu-grouped">
+              <div className="mobile-menu-group">
+                <p className="mobile-menu-label">{data.ui.navigation.menuSections}</p>
+
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false)
+                      scrollToSection(item.id)
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mobile-menu-divider" />
+
+              <div className="mobile-menu-group">
+                <p className="mobile-menu-label">{data.ui.navigation.menuActions}</p>
+
+                <button type="button" onClick={() => openResume('visual')}>
+                  <i className="bi bi-file-earmark-person" aria-hidden="true" />
+                  {data.ui.navigation.resumeVisual}
                 </button>
-              ))}
-              <button
-                type="button"
-                onClick={() => {
-                  toggleLanguage()
-                  setMenuOpen(false)
-                }}
-              >
-                <i className="bi bi-globe2" aria-hidden="true" />
-                {language === 'pt' ? 'English' : 'Português'}
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setMenuOpen(false)
-                  onOpenResume()
-                }}
-              >
-                <i className="bi bi-file-earmark-text" aria-hidden="true" />
-                {data.ui.navigation.resume}
-              </button>
+
+                <button type="button" onClick={() => openResume('ats')}>
+                  <i className="bi bi-file-earmark-text" aria-hidden="true" />
+                  {data.ui.navigation.resumeAts}
+                </button>
+
+                <a
+                  className="mobile-menu-link"
+                  href={data.personal.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <i className="bi bi-linkedin" aria-hidden="true" />
+                  LinkedIn
+                </a>
+              </div>
             </div>
           )}
         </nav>
@@ -223,6 +241,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
               />
               <button type="button" onClick={() => setSearchOpen(false)}>Esc</button>
             </div>
+
             <div className="search-results">
               {results.slice(0, 10).map((result, index) => (
                 <button key={`${result.label}-${index}`} type="button" onClick={() => chooseResult(result.sectionId)}>

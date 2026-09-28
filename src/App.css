@@ -163,7 +163,7 @@
   position: absolute;
   right: 0;
   top: 56px;
-  width: 230px;
+  width: 250px;
   display: grid;
   gap: 4px;
   padding: 8px;
@@ -173,18 +173,58 @@
   box-shadow: var(--shadow);
 }
 
-.mobile-menu button {
+.mobile-menu button,
+.mobile-menu-link {
+  width: 100%;
   display: flex;
   gap: 9px;
   align-items: center;
   text-align: left;
-  padding: 11px 12px;
+  padding: 10px 12px;
   border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 180ms ease;
 }
 
-.mobile-menu button:hover {
+.mobile-menu button:hover,
+.mobile-menu-link:hover {
   background: var(--surface-muted);
   color: var(--text);
+}
+
+.mobile-menu-grouped {
+  padding: 10px;
+  gap: 0;
+}
+
+.mobile-menu-group {
+  display: grid;
+  gap: 2px;
+}
+
+.mobile-menu-label {
+  margin: 4px 12px 7px;
+  color: color-mix(in srgb, var(--muted) 68%, transparent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.mobile-menu-divider {
+  height: 1px;
+  margin: 9px 8px;
+  background: var(--border);
+}
+
+.mobile-menu-group button i,
+.mobile-menu-link i {
+  width: 17px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 /* Search */
@@ -1439,6 +1479,186 @@
   .resume-projects article,
   .resume-courses article,
   .resume-experience {
+    break-inside: avoid;
+  }
+}
+
+
+/* ATS Resume */
+.ats-resume-page {
+  background: #f5f5f5;
+}
+
+.ats-sheet {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  color: #171717;
+  border: 1px solid #dddddd;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .08);
+  padding: 46px 52px;
+}
+
+.ats-sheet a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ats-header {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1f1f1f;
+}
+
+.ats-header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.ats-header > p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ats-contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 14px;
+  margin-top: 13px;
+  font-size: 10.5px;
+}
+
+.ats-contact-line > *:not(:last-child)::after {
+  content: '•';
+  margin-left: 14px;
+  color: #777;
+}
+
+.ats-section {
+  padding-top: 19px;
+}
+
+.ats-section h2 {
+  margin: 0 0 9px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #bdbdbd;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.ats-section > p,
+.ats-entry p,
+.ats-project p,
+.ats-simple-list,
+.ats-entry ul {
+  font-size: 10.8px;
+  line-height: 1.5;
+}
+
+.ats-section > p {
+  margin: 0;
+}
+
+.ats-entry + .ats-entry,
+.ats-project + .ats-project {
+  margin-top: 12px;
+}
+
+.ats-entry-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ats-entry-heading h3,
+.ats-project h3 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.ats-entry-heading p {
+  margin: 2px 0 0;
+  color: #444;
+}
+
+.ats-entry-heading span {
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.ats-entry ul {
+  margin: 7px 0 0;
+  padding-left: 17px;
+}
+
+.ats-entry li + li {
+  margin-top: 3px;
+}
+
+.ats-skills-list {
+  display: grid;
+  gap: 4px;
+}
+
+.ats-skills-list p {
+  margin: 0;
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.ats-project p {
+  margin: 4px 0 0;
+}
+
+.ats-simple-list {
+  margin: 0;
+  padding-left: 17px;
+}
+
+.ats-simple-list li + li {
+  margin-top: 4px;
+}
+
+@media (max-width: 620px) {
+  .ats-sheet {
+    padding: 30px 22px;
+  }
+
+  .ats-contact-line {
+    display: grid;
+    gap: 5px;
+  }
+
+  .ats-contact-line > *::after {
+    display: none;
+  }
+
+  .ats-entry-heading {
+    display: grid;
+    gap: 4px;
+  }
+}
+
+@media print {
+  .ats-resume-page {
+    padding: 0;
+    background: white;
+  }
+
+  .ats-sheet {
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .ats-section,
+  .ats-entry,
+  .ats-project {
     break-inside: avoid;
   }
 }
