@@ -52,10 +52,17 @@ export function Hero({ data }: HeroProps) {
             )}
           </div>
 
-          <span className="location-pill">
-            <i className="bi bi-geo-alt" aria-hidden="true" />
-            {data.personal.location}
-          </span>
+          <div className="hero-status">
+            <span className="location-pill">
+              <i className="bi bi-geo-alt" aria-hidden="true" />
+              {data.personal.location}
+            </span>
+
+            <span className="availability-pill">
+              <i className="bi bi-briefcase" aria-hidden="true" />
+              {data.personal.availability}
+            </span>
+          </div>
         </motion.div>
 
         <motion.h1 {...enter(1)}>{data.personal.fullName}</motion.h1>
