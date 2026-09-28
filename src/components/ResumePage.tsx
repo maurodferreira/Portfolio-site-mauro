@@ -147,6 +147,24 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
             ))}
           </div>
         </section>
+
+        <section className="resume-section resume-leadership">
+          <h3>{data.ui.resume.leadership}</h3>
+          {data.leadership.map((item) => (
+            <article key={item.organization}>
+              <div className="resume-item-heading">
+                <div>
+                  <strong>{item.role}</strong>
+                  <span>{item.organization}</span>
+                </div>
+                <time>{item.period}</time>
+              </div>
+              <ul>
+                {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+              </ul>
+            </article>
+          ))}
+        </section>
       </main>
     </div>
   )
