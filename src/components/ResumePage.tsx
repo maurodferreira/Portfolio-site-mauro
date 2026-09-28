@@ -74,6 +74,16 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
           <div className="resume-contact">
             <span><i className="bi bi-geo-alt" aria-hidden="true" />{data.personal.location}</span>
             <a href={`mailto:${data.personal.email}`}><i className="bi bi-envelope" aria-hidden="true" />{data.personal.email}</a>
+            {data.personal.phone && (
+              <a
+                href={`https://wa.me/${data.personal.phone.replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-whatsapp" aria-hidden="true" />
+                {data.personal.phone}
+              </a>
+            )}
             <a href={data.personal.github} target="_blank" rel="noreferrer"><i className="bi bi-github" aria-hidden="true" />github.com/maurodferreira</a>
             <a href={data.personal.linkedin} target="_blank" rel="noreferrer"><i className="bi bi-linkedin" aria-hidden="true" />LinkedIn</a>
           </div>
