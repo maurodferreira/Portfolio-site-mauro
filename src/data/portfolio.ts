@@ -263,6 +263,9 @@ const pt: PortfolioData = {
     },
     hero: {
       email: 'Email',
+      openGmail: 'Abrir no Gmail',
+      copyEmail: 'Copiar email',
+      emailCopied: 'Email copiado',
       phone: 'Telefone',
       github: 'GitHub',
       linkedin: 'LinkedIn',
@@ -565,6 +568,9 @@ const en: PortfolioData = {
     },
     hero: {
       email: 'Email',
+      openGmail: 'Open in Gmail',
+      copyEmail: 'Copy email',
+      emailCopied: 'Email copied',
       phone: 'Phone',
       github: 'GitHub',
       linkedin: 'LinkedIn',

@@ -1,4 +1,5 @@
 import type { PortfolioData } from '../types/portfolio'
+import { EmailContactMenu } from './EmailContactMenu'
 import { Reveal } from './Reveal'
 
 interface ContactCtaProps {
@@ -24,15 +25,14 @@ export function ContactCta({ data }: ContactCtaProps) {
             </div>
 
             <div className="contact-cta-actions">
-              <a
-                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-cta-link"
-              >
-                <i className="bi bi-envelope" aria-hidden="true" />
-                <span>Email</span>
-              </a>
+              <EmailContactMenu
+                email={data.personal.email}
+                label={data.ui.hero.email}
+                openGmailLabel={data.ui.hero.openGmail}
+                copyLabel={data.ui.hero.copyEmail}
+                copiedLabel={data.ui.hero.emailCopied}
+                variant="cta"
+              />
 
               {whatsapp && (
                 <a href={whatsapp} target="_blank" rel="noreferrer" className="contact-cta-link">

@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { PortfolioData } from '../types/portfolio'
+import { EmailContactMenu } from './EmailContactMenu'
 
 interface HeroProps {
   data: PortfolioData
@@ -9,9 +10,6 @@ export function Hero({ data }: HeroProps) {
   const reduceMotion = useReducedMotion()
 
   const contacts = [
-    data.personal.email
-      ? { label: data.ui.hero.email, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}`, icon: 'bi-envelope', external: true }
-      : null,
     data.personal.phone
       ? {
           label: data.ui.hero.phone,
@@ -70,6 +68,17 @@ export function Hero({ data }: HeroProps) {
         <motion.p {...enter(3)} className="hero-subtitle">{data.personal.subtitle}</motion.p>
 
         <motion.div {...enter(4)} className="contact-list">
+          {data.personal.email && (
+            <EmailContactMenu
+              email={data.personal.email}
+              label={data.ui.hero.email}
+              openGmailLabel={data.ui.hero.openGmail}
+              copyLabel={data.ui.hero.copyEmail}
+              copiedLabel={data.ui.hero.emailCopied}
+              variant="pill"
+            />
+          )}
+
           {contacts.map((contact) => (
             <a
               key={contact.label}

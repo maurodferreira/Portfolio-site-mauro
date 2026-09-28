@@ -84,6 +84,9 @@ export interface UiStrings {
   }
   hero: {
     email: string
+    openGmail: string
+    copyEmail: string
+    emailCopied: string
     phone: string
     github: string
     linkedin: string
