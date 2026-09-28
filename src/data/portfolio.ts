@@ -218,7 +218,6 @@ const pt: PortfolioData = {
       menu: 'Abrir menu',
     },
     hero: {
-      scroll: 'Role para explorar',
       email: 'Email',
       phone: 'Telefone',
       github: 'GitHub',
@@ -472,7 +471,6 @@ const en: PortfolioData = {
       menu: 'Open menu',
     },
     hero: {
-      scroll: 'Scroll to explore',
       email: 'Email',
       phone: 'Phone',
       github: 'GitHub',
