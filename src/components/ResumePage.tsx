@@ -51,10 +51,24 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
 
       <main className="resume-sheet">
         <header className="resume-header">
-          <div>
-            <p className="resume-kicker">{data.personal.subtitle}</p>
-            <h1>{data.personal.fullName}</h1>
-            <h2>{data.personal.title}</h2>
+          <div className="resume-profile-block">
+            {data.personal.avatar ? (
+              <img
+                src={data.personal.avatar}
+                alt={data.personal.fullName}
+                className="resume-avatar"
+              />
+            ) : (
+              <div className="resume-avatar resume-avatar-fallback" aria-hidden="true">
+                {data.personal.initials}
+              </div>
+            )}
+
+            <div>
+              <p className="resume-kicker">{data.personal.subtitle}</p>
+              <h1>{data.personal.fullName}</h1>
+              <h2>{data.personal.title}</h2>
+            </div>
           </div>
 
           <div className="resume-contact">
