@@ -123,6 +123,19 @@ const pt: PortfolioData = {
       tags: ['React', 'TypeScript', 'Vite', 'CodeMirror'],
     },
     {
+      name: 'Portfolio Site',
+      description:
+        'Portfólio profissional bilíngue criado para apresentar experiência, projetos, habilidades técnicas e versões de currículo visual e ATS.',
+      contribution:
+        'Arquitetura e desenvolvimento completo do site, com foco em responsividade, acessibilidade, SEO, experiência do recrutador e manutenção centralizada dos dados.',
+      highlights: [
+        'PT/EN, tema claro/escuro e currículos visual e ATS.',
+        'SEO estruturado, Open Graph, JSON-LD e design responsivo.',
+      ],
+      link: 'https://github.com/maurodferreira/Portfolio-site-mauro',
+      tags: ['React', 'TypeScript', 'Vite', 'SEO'],
+    },
+    {
       name: 'Museu Light',
       description:
         'Evolução do site e dos fluxos de visitação, incluindo conteúdo interativo, responsividade, agendamentos, integrações com API e manutenção de sistemas modernos e legados.',
@@ -410,6 +423,19 @@ const en: PortfolioData = {
       ],
       link: 'https://github.com/maurodferreira/CodeMpi',
       tags: ['React', 'TypeScript', 'Vite', 'CodeMirror'],
+    },
+    {
+      name: 'Portfolio Site',
+      description:
+        'Bilingual professional portfolio built to present experience, projects, technical skills and both visual and ATS resume versions.',
+      contribution:
+        'Designed and developed the full site with a focus on responsiveness, accessibility, SEO, recruiter experience and centralized content maintenance.',
+      highlights: [
+        'PT/EN, light/dark themes and visual/ATS resumes.',
+        'Structured SEO, Open Graph, JSON-LD and responsive design.',
+      ],
+      link: 'https://github.com/maurodferreira/Portfolio-site-mauro',
+      tags: ['React', 'TypeScript', 'Vite', 'SEO'],
     },
     {
       name: 'Museu Light',
