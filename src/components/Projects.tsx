@@ -36,7 +36,15 @@ export function Projects({ data }: ProjectsProps) {
                   )}
                 </div>
 
-                <h3>{project.name}</h3>
+                <div className="project-title-row">
+                  <h3>{project.name}</h3>
+                  {project.status && (
+                    <span className="project-status">
+                      <i className="bi bi-lock" aria-hidden="true" />
+                      {project.status}
+                    </span>
+                  )}
+                </div>
                 <p className="project-description">{project.description}</p>
 
                 {project.contribution && (

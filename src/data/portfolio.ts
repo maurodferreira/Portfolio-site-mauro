@@ -119,7 +119,7 @@ const pt: PortfolioData = {
         'Editor CodeMirror integrado ao fluxo de prática.',
         'Sistema de exercícios, dicas, XP e revisão de conceitos.',
       ],
-      link: 'https://github.com/maurodferreira/CodeMpi',
+      status: 'Em desenvolvimento • Repositório privado',
       tags: ['React', 'TypeScript', 'Vite', 'CodeMirror'],
     },
     {
@@ -430,7 +430,7 @@ const en: PortfolioData = {
         'CodeMirror editor integrated into the practice flow.',
         'Exercise, hint, XP and concept-review system.',
       ],
-      link: 'https://github.com/maurodferreira/CodeMpi',
+      status: 'In development • Private repository',
       tags: ['React', 'TypeScript', 'Vite', 'CodeMirror'],
     },
     {

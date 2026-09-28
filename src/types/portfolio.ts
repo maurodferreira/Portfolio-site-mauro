@@ -42,6 +42,7 @@ export interface ProjectItem {
   description: string
   contribution?: string
   highlights?: string[]
+  status?: string
   link?: string
   tags: string[]
 }
