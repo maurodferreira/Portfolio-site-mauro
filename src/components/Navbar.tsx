@@ -136,6 +136,16 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
             </button>
 
             <button
+              className="icon-button"
+              type="button"
+              aria-label={data.ui.navigation.theme}
+              title={data.ui.navigation.theme}
+              onClick={toggleTheme}
+            >
+              <i className={`bi ${theme === 'dark' ? 'bi-sun' : 'bi-moon-stars'}`} aria-hidden="true" />
+            </button>
+
+            <button
               className="language-button"
               type="button"
               aria-label="Change language"
@@ -144,16 +154,6 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
             >
               <i className="bi bi-translate" aria-hidden="true" />
               {language.toUpperCase()}
-            </button>
-
-            <button
-              className="icon-button"
-              type="button"
-              aria-label={data.ui.navigation.theme}
-              title={data.ui.navigation.theme}
-              onClick={toggleTheme}
-            >
-              <i className={`bi ${theme === 'dark' ? 'bi-sun' : 'bi-moon-stars'}`} aria-hidden="true" />
             </button>
 
             <button className="resume-button desktop-resume" type="button" onClick={() => onOpenResume('visual')}>
@@ -177,7 +177,7 @@ export function Navbar({ data, language, onLanguageChange, onOpenResume }: Navba
               <div className="mobile-menu-group">
                 <p className="mobile-menu-label">{data.ui.navigation.menuSections}</p>
 
-                {navItems.map((item) => (
+                {navItems.slice(0, 5).map((item) => (
                   <button
                     key={item.id}
                     type="button"
