@@ -155,7 +155,10 @@ export function ResumePage({ data, language, onLanguageChange, onBack }: ResumeP
             {data.education.map((item) => (
               <article className="resume-education" key={item.course}>
                 <strong>{item.course}</strong>
-                <span>{item.institution}</span>
+                <span>
+                  {item.institution}
+                  {item.location ? ` · ${item.location}` : ''}
+                </span>
                 <small>{item.period}</small>
               </article>
             ))}

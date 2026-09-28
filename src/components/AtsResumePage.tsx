@@ -136,7 +136,10 @@ export function AtsResumePage({ data, language, onLanguageChange, onBack }: AtsR
               <div className="ats-entry-heading">
                 <div>
                   <h3>{item.course}</h3>
-                  <p>{item.institution} | {item.location}</p>
+                  <p>
+                    {item.institution}
+                    {item.location ? ` | ${item.location}` : ''}
+                  </p>
                 </div>
                 <span>{item.period}</span>
               </div>

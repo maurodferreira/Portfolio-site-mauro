@@ -202,6 +202,12 @@ const pt: PortfolioData = {
       location: 'Cornélio Procópio, Paraná',
       period: 'jul 2023 — conclusão prevista em 2027',
     },
+    {
+      course: 'Educação Física — Bacharelado',
+      institution: 'UNOPAR',
+      location: '',
+      period: 'fev 2026 — conclusão prevista em jan 2030',
+    },
   ],
 
   courses: [
@@ -506,6 +512,12 @@ const en: PortfolioData = {
       institution: 'Federal University of Technology — Paraná (UTFPR)',
       location: 'Cornélio Procópio, Paraná, Brazil',
       period: 'Jul 2023 — expected 2027',
+    },
+    {
+      course: "Physical Education — Bachelor's Degree",
+      institution: 'UNOPAR',
+      location: '',
+      period: 'Feb 2026 — expected Jan 2030',
     },
   ],
 

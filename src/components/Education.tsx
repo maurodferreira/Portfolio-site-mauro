@@ -23,7 +23,7 @@ export function Education({ data }: EducationProps) {
               <p className="education-period">{item.period}</p>
               <h3>{item.course}</h3>
               <p className="education-institution">{item.institution}</p>
-              <p className="education-location">{item.location}</p>
+              {item.location && <p className="education-location">{item.location}</p>}
             </article>
           </Reveal>
         ))}
