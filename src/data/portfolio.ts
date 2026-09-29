@@ -608,7 +608,7 @@ const en: PortfolioData = {
       projectHighlights: 'Highlights',
       projectOpen: 'View code',
       contactTitle: 'Let’s talk?',
-      contactSubtitle: 'If my profile fits your team or project, these are the most direct ways to reach me.',
+      contactSubtitle: 'If my profile is a good fit for your team or project, these are the most direct ways to reach me.',
     },
     search: {
       placeholder: 'Search technical skills, projects, courses and sections...',
