@@ -246,7 +246,7 @@ const pt: PortfolioData = {
       highlights: [
         'Escrivão: responsável por documentos, atas e organização burocrática do Capítulo; adquiri duas Canetas de Ouro em 2021.',
         'Mestre Conselheiro: presidente eleito do Capítulo, responsável por conduzir reuniões, representar o grupo e coordenar os projetos da gestão.',
-        'Serviços Meritório: conclui os critérios da Campanha Nacional de Incentivo à Excelência e obtive o Prêmio de Past Mestre Conselheiro por Serviços Meritórios em dezembro de 2023.'
+        'Serviço Meritório: conclui os critérios da Campanha Nacional de Incentivo à Excelência e obtive o Prêmio de Past Mestre Conselheiro por Serviços Meritórios em dezembro de 2023.'
       ],
     },
   ],
@@ -297,7 +297,7 @@ const pt: PortfolioData = {
       projectHighlights: 'Destaques',
       projectOpen: 'Ver código',
       contactTitle: 'Vamos conversar?',
-      contactSubtitle: 'Se meu perfil fizer sentido para sua equipe ou projeto, estes são os canais mais diretos para falar comigo.',
+      contactSubtitle: 'Se meu perfil fizer sentido para sua equipe ou projeto, estes são os melhores canais para entrar em contato comigo.',
     },
     search: {
       placeholder: 'Pesquisar habilidades, projetos, cursos e seções...',
