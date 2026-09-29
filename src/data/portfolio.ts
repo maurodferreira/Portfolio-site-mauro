@@ -22,7 +22,7 @@ const pt: PortfolioData = {
   },
 
   summary:
-    'Desenvolvedor Full Stack com experiência na construção e manutenção de aplicações web para projetos de diferentes segmentos. Atuo profissionalmente em regime PJ, trabalhando principalmente com React, TypeScript, Next.js, Node.js e NestJS, desde a implementação de interfaces e regras de negócio até integração com APIs, bancos de dados e manutenção de sistemas existentes. Já participei de projetos para marcas como Santander, B3, Heineken e Museu Light, além de desenvolver produtos próprios como o CodeMpi.',
+    'Desenvolvedor Full Stack com experiência na construção e manutenção de aplicações web para projetos de diferentes segmentos. Atuo profissionalmente em regime PJ, trabalhando principalmente com React, TypeScript, Next.js, Node.js e NestJS, desde a implementação de interfaces e regras de negócio até integração com APIs, bancos de dados e manutenção de sistemas existentes. Já participei de projetos para marcas como Santander, B3, Heineken e Museu Light, além de desenvolver projetos próprios como o CodeMpi.',
 
   skills: [
     {
@@ -239,17 +239,17 @@ const pt: PortfolioData = {
   ],
 
   leadership: [
-    {
-      organization: 'Ordem DeMolay — Capítulo Mozart Vallim nº 793',
-      role: 'Escrivão e Mestre Conselheiro',
-      period: '2017 — 2026',
-      highlights: [
-        'Escrivão: responsável por documentos, atas e organização burocrática do Capítulo; adquiri duas Canetas de Ouro em 2021.',
-        'Mestre Conselheiro: presidente eleito do Capítulo, responsável por conduzir reuniões, representar o grupo e coordenar os projetos da gestão.',
-        'Serviço Meritório: conclui os critérios da Campanha Nacional de Incentivo à Excelência e obtive o Prêmio de Past Mestre Conselheiro por Serviços Meritórios em dezembro de 2023.'
-      ],
-    },
-  ],
+  {
+    organization: 'Ordem DeMolay — Capítulo Mozart Vallim nº 793',
+    role: 'Escrivão e Mestre Conselheiro',
+    period: '2017 — 2026',
+    highlights: [
+      'Escrivão: responsável pela gestão da documentação oficial, atas de reuniões e registros administrativos do Capítulo; recebi duas Canetas de Ouro em 2021.',
+      'Mestre Conselheiro: eleito para liderar o Capítulo, presidindo reuniões, representando seus membros e supervisionando projetos e atividades ao longo da gestão.',
+      'Serviço Meritório: cumpri os requisitos da Campanha Nacional de Incentivo à Excelência e fui agraciado com o Prêmio de Past Mestre Conselheiro por Serviços Meritórios em dezembro de 2023.'
+    ],
+  },
+],
 
   ui: {
     navigation: {
@@ -333,7 +333,7 @@ const en: PortfolioData = {
   },
 
   summary:
-    'Full-Stack Developer with experience building and maintaining web applications across different industries. I work professionally as an independent contractor, mainly with React, TypeScript, Next.js, Node.js and NestJS, covering user interfaces, business rules, API integrations, databases and maintenance of existing systems. I have contributed to projects for brands such as Santander, B3, Heineken and Museu Light, while also building personal products such as CodeMpi.',
+    'Full-Stack Developer with experience building and maintaining web applications across different industries. I work professionally as an independent contractor, mainly with React, TypeScript, Next.js, Node.js and NestJS, covering user interfaces, business rules, API integrations, databases and maintenance of existing systems. I have contributed to projects for brands such as Santander, B3, Heineken and Museu Light, while also building personal projects such as CodeMpi.',
 
   skills: [
     {
@@ -550,17 +550,17 @@ const en: PortfolioData = {
   ],
 
   leadership: [
-    {
-      organization: 'DeMolay Order — Mozart Vallim Chapter no. 793',
-      role: 'Chapter Scribe and Master Councilor',
-      period: '2017 — 2026',
-      highlights: [
-        'Chapter Scribe: responsible for documents, meeting minutes and the Chapter’s administrative records; received two Golden Pen recognitions in 2021.',
-        'Master Councilor: elected president of the Chapter, responsible for leading meetings, representing the group and coordinating projects during the term.',
-        'Completed the National Excellence Campaign criteria and received the Past Master Councilor Meritorious Service Award in December 2023.'
-      ],
-    },
-  ],
+  {
+    organization: 'DeMolay Order — Mozart Vallim Chapter No. 793',
+    role: 'Chapter Scribe and Master Councilor',
+    period: '2017 — 2026',
+    highlights: [
+      'Chapter Scribe: oversaw official documentation, meeting minutes, and administrative records for the Chapter; received two Golden Pen Awards in 2021.',
+      'Master Councilor: elected to lead the Chapter, presiding over meetings, representing its members, and overseeing projects and activities throughout the term.',
+      'Meritorious Service: fulfilled the requirements of the National Excellence Campaign and was awarded the Past Master Councilor Meritorious Service Award in December 2023.'
+    ],
+  },
+],
 
   ui: {
     navigation: {
